@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabina Karabaeva | Junior Frontend Developer</title>
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito+Sans:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #E6A5B7; 
+      color: #367055; 
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    header {
+      background-color: #E6A5B7; 
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(54,112,85,0.15);
+    }
+
+    .logo {
+      font-family: 'Abril Fatface', serif;
+      font-size: 30px;
+      color: #715cc4; 
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #98FFB3; 
+    }
+
+    .navbar {
+      display: flex;
+      gap: 25px;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .navbar a {
+      font-weight: 600;
+      font-size: 18px;
+      color: #367055;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #98FFB3; 
+      color: #FFFFFF; 
+    }
+
+   
+    section {
+      padding: 60px 20px 80px;
+      min-height: 100vh;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    
+    .home .main-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(54,112,85,0.3);
+    }
+
+    .intro {
+      max-width: 480px;
+    }
+
+    .intro h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #367055;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+
+    .intro h1:hover {
+      color: gold; 
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: black;
+      line-height: 1.5;
+      cursor: default;
+    }
+
+    .btn-box {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-box a {
+      font-family: 'Nunito Sans', sans-serif;
+      padding: 14px 30px;
+      background-color: #98FFB3; 
+      color: #FFFFFF; 
+      border: 2px solid #367055;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(54,112,85,0.3);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .btn-box a:hover {
+      background-color: #C7B9FF; 
+      color: #367055;
+      border-color: #2e5b42;
+      box-shadow: 0 4px 12px rgba(199,185,255,0.6);
+    }
+
+    
+    .home-sci {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .home-sci a {
+      width: 42px;
+      height: 42px;
+      background: #98FFB3; 
+      border: 2px solid #367055;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 22px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .home-sci a:hover {
+      background-color: #C7B9FF; 
+      color: #367055;
+    }
+
+    
+    h2 {
+      font-family: 'Abril Fatface', serif;
+      font-size: 2.2rem;
+      color: #367055;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p, ul {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.1rem;
+      color: #4a6b54;
+      margin-bottom: 15px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #367055;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: #C7B9FF;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      .navbar {
+        gap: 15px;
+      }
+
+      .navbar a {
+        font-size: 16px;
+        padding: 6px 10px;
+      }
+
+      .home .main-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro {
+        max-width: 100%;
+      }
+
+      .btn-box {
+        justify-content: center;
+      }
+
+      .btn-box a {
+        min-width: 80%;
+      }
+
+      .home-sci {
+        gap: 15px;
+      }
+
+      section {
+        padding: 40px 15px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#home" class="logo">sk.</a>
+  <nav class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="home" id="home">
+  <div class="main-content">
+    <img src="images/myjundevpic.JPG" alt="Sabina" class="profile-pic" />
+    <div class="intro">
+      <h1>Hi, I'm Sabina | Junior Frontend Developer</h1>
+      <p>
+        I’m a passionate frontend developer learning to build beautiful,
+        user-friendly websites with HTML, CSS, and JavaScript. I enjoy
+        turning designs into clean code and improving the user experience on
+        the web.
+      </p>
+      <div class="btn-box">
+        <a href="https://wa.me/phone" target="_blank" rel="noopener noreferrer">Hire Me</a>
+        <a href="https://t.me/nickname" target="_blank" rel="noopener noreferrer">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-sci">
+    <a href="https://www.instagram.com/sabina_kuhle" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+    <a href="https://mail.google.com/mail/?view=cm&to=skmvwk@gmail.com" target="_blank" rel="noopener noreferrer"><i class='bx bxl-gmail'></i></a>
+    <a href="https://www.linkedin.com/in/sabina-karabaeva-1358b525b" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Me</h2>
+  <p><strong>Full Name:</strong> XXXXX XXXXX</p>
+  <p><strong>Age:</strong> Not specified (please provide if desired)</p>
+  <p><strong>Skills:</strong> HTML, CSS, JavaScript, responsive web design, UI/UX principles</p>
+  <p>
+    <strong>Why I Want to Work in This Field:</strong> I am excited about a career in frontend development because it drives me to build and create something meaningful. I love the process of turning ideas into functional, beautiful websites and enjoy seeing the results of my work come to life. The challenge of solving problems and enhancing user experiences motivates me to keep learning and growing in this dynamic field.
+  </p>
+</section>
+
+<section class="projects" id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>TETRIS-2.0</h3>
+    <p><strong>Description:</strong> A modern version of the classic Tetris game, developed using HTML, CSS, and JavaScript. The project features smooth animations, sound effects, level progression, and a responsive design.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Classic gameplay with 7 tetrominoes.</li>
+      <li>Sound effects for block drops, level-ups, and game over.</li>
+      <li>Fireworks animations triggered on level-up.</li>
+      <li>Responsive design for both mobile and desktop devices.</li>
+    </ul>
+    <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+    <p><strong>Repository:</strong> <a href="https://github.com/Mrskuhle/TETRIS-2.0" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p><strong>Completion Date:</strong> May 2025</p>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <h2>Portfolio</h2>
+  <p>Here are some of the websites I've built recently. Each project highlights my ability to combine clean HTML structure with custom CSS styling and responsive design.</p>
+  <div class="project">
+    <h3>Morning STAR Coffee Shop Website</h3>
+    <p><strong>Description:</strong> A modern, responsive website for a fictional coffee shop. Built to showcase clean design, structure, and layout practices using semantic HTML and custom CSS styling.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Fully responsive layout with custom banner and section design</li>
+      <li>Semantic HTML5 structure (Header, Sections, Footer)</li>
+      <li>Custom CSS with media queries and modern fonts</li>
+      <li>Interactive contact form</li>
+    </ul>
+    <p><strong>Technologies:</strong> HTML, CSS, Google Fonts</p>
+    <p><strong>Repository:</strong> <a href="https://github.com/Mrskuhle/MorningStar" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p><strong>Completion Date:</strong> May 2025</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p><strong>Phone:</strong> +43 0000000000</p>
+  <p><strong>Email:</strong> <a href="mailto:skmvwk@gmail.com">skmvwk@gmail.com</a></p>
+  <p><strong>Location:</strong> Located in Vienna, Austria</p>
+</section>
+
+<script>
+  
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
