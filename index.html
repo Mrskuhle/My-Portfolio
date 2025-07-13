@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sabina Karabaeva | Junior Frontend Developer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito+Sans:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <style>
@@ -16,9 +16,9 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #E6A5B7;
-      color: black;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #fef3f2, #d9e6ff);
+      color: #111827;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
@@ -29,7 +29,7 @@
     }
 
     header {
-      background-color: #E6A5B7;
+      background: #ffffff;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -37,30 +37,31 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(54,112,85,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .logo {
-      font-family: 'Abril Fatface', serif;
-      font-size: 30px;
-      color: #715cc4;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #4f46e5;
       transition: color 0.3s ease;
     }
 
     .logo:hover {
-      color: #98FFB3;
+      color: #10b981;
     }
 
     .navbar {
       display: flex;
-      gap: 25px;
-      font-family: 'Nunito Sans', sans-serif;
+      gap: 20px;
+      font-family: 'Open Sans', sans-serif;
     }
 
     .navbar a {
       font-weight: 600;
-      font-size: 18px;
-      color: black;
+      font-size: 16px;
+      color: #111827;
       padding: 8px 12px;
       border-radius: 6px;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -68,15 +69,27 @@
 
     .navbar a:hover,
     .navbar a.active {
-      background-color: #98FFB3;
-      color: #FFFFFF;
+      background-color: #10b981;
+      color: #ffffff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #4f46e5;
     }
 
     section {
-      padding: 60px 20px 80px;
-      min-height: 100vh;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: 0 auto;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .home .main-content {
@@ -88,36 +101,37 @@
     }
 
     .profile-pic {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(54,112,85,0.3);
+      border: 4px solid transparent;
+      background: linear-gradient(45deg, #4f46e5, #10b981);
+      padding: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
     .intro {
-      max-width: 480px;
+      max-width: 500px;
     }
 
     .intro h1 {
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      color: black;
-      transition: color 0.3s ease;
-      cursor: default;
-    }
-
-    .intro h1:hover {
-      color: gold;
+      color: #111827;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
     .intro p {
       font-size: 1.1rem;
       margin-bottom: 30px;
-      color: black;
-      line-height: 1.5;
-      cursor: default;
+      color: #374151;
     }
 
     .btn-box {
@@ -127,62 +141,78 @@
     }
 
     .btn-box a {
-      padding: 14px 30px;
-      background-color: #98FFB3;
-      color: #FFFFFF;
-      border: 2px solid black;
+      padding: 12px 28px;
+      background: linear-gradient(45deg, #4f46e5, #818cf8);
+      color: #ffffff;
+      border: none;
       border-radius: 8px;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(54,112,85,0.3);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       min-width: 140px;
+      text-align: center;
     }
 
     .btn-box a:hover {
-      background-color: #C7B9FF;
-      color: black;
-      border-color: black;
-      box-shadow: 0 4px 12px rgba(199,185,255,0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      background: linear-gradient(45deg, #818cf8, #4f46e5);
     }
 
     .home-sci {
-      margin-top: 60px;
+      margin-top: 40px;
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     .home-sci a {
-      width: 42px;
-      height: 42px;
-      background: #98FFB3;
-      border: 2px solid black;
+      width: 40px;
+      height: 40px;
+      background: #ffffff;
+      border: 2px solid #4f46e5;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
-      font-size: 22px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      color: #4f46e5;
+      font-size: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
     .home-sci a:hover {
-      background-color: #C7B9FF;
-      color: black;
+      background-color: #10b981;
+      color: #ffffff;
+      transform: rotate(360deg);
     }
 
     h2 {
-      font-family: 'Abril Fatface', serif;
-      font-size: 2.2rem;
-      color: black;
-      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 30px;
       text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #4f46e5;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
     }
 
     p, ul {
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: 1.1rem;
-      color: black;
+      color: #374151;
       margin-bottom: 15px;
       max-width: 700px;
       margin-left: auto;
@@ -195,37 +225,102 @@
     }
 
     ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .project a {
-  color: #715cc4;
-  font-weight: 600;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-.project a:hover {
-  color: #98FFB3;
-  text-decoration: none;
-}
-    section {
-  scroll-margin-top: 100px; /* отступ для якорной прокрутки */
-}
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease-in;
+    }
 
+    .project-card:hover {
+      transform: translateY(-5px) rotate(1deg);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .project-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 10px;
+    }
+
+    .project-card a {
+      color: #4f46e5;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #10b981;
+      text-decoration: none;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4f46e5;
+      color: #ffffff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
     @media (max-width: 768px) {
       header {
         padding: 15px 20px;
+        position: relative;
       }
 
       .navbar {
-        gap: 15px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       .navbar a {
         font-size: 16px;
-        padding: 6px 10px;
+        padding: 10px;
       }
 
       .home .main-content {
@@ -233,12 +328,16 @@
         text-align: center;
       }
 
+      .intro h1 {
+        font-size: 2rem;
+      }
+
       .btn-box {
         justify-content: center;
       }
 
       .btn-box a {
-        min-width: 80%;
+        min-width: 100%;
       }
 
       .home-sci {
@@ -246,7 +345,17 @@
       }
 
       section {
-        padding: 40px 15px 60px;
+        padding: 40px 15px;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .portfolio {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
@@ -262,6 +371,7 @@
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
   </nav>
+  <i class='bx bx-menu menu-toggle'></i>
 </header>
 
 <section class="home" id="home">
@@ -269,32 +379,31 @@
     <img src="myjundevpic.JPG" alt="Sabina" class="profile-pic" />
     <div class="intro">
       <h1>Hi, I'm Sabina | Junior Frontend Developer</h1>
-      <p>I’m a passionate frontend developer learning to build beautiful, user-friendly websites with HTML, CSS, and JavaScript. I enjoy turning designs into clean code and improving the user experience on the web.</p>
+      <p>I’m a passionate frontend developer crafting beautiful, user-friendly websites with HTML, CSS, and JavaScript. I specialize in responsive design and intuitive UI/UX to enhance the user experience on the web.</p>
       <div class="btn-box">
-        <a href="https://wa.me/" target="_blank">Hire Me</a>
-        <a href="https://t.me/" target="_blank">Let's Talk</a>
+        <a href="https://wa.me/+4367761771586" target="_blank">Hire Me</a>
+        <a href="https://t.me/+4367761771586" target="_blank">Let's Talk</a>
       </div>
     </div>
   </div>
- <div class="home-sci">
-  <a href="https://www.instagram.com/sabina_kuhle" target="_blank"><i class='bx bxl-instagram'></i></a>
-  <a href="https://mail.google.com/mail/?view=cm&to=skmvwk@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
-  <a href="https://www.linkedin.com/in/sabina-karabaeva-1358b525b" target="_blank"><i class='bx bxl-linkedin'></i></a>
-  <a href="https://github.com/Mrskuhle" target="_blank"><i class='bx bxl-github'></i></a>
-</div>
-
+  <div class="home-sci">
+    <a href="https://www.instagram.com/sabina_kuhle" target="_blank"><i class='bx bxl-instagram'></i></a>
+    <a href="mailto:skmvwk@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
+    <a href="https://www.linkedin.com/in/sabina-karabaeva-1358b525b" target="_blank"><i class='bx bxl-linkedin'></i></a>
+    <a href="https://github.com/Mrskuhle" target="_blank"><i class='bx bxl-github'></i></a>
+  </div>
 </section>
 
 <section class="about" id="about">
   <h2>About Me</h2>
   <p><strong>Full Name:</strong> Sabina Karabaeva</p>
   <p><strong>Skills:</strong> HTML, CSS, JavaScript, responsive web design, UI/UX principles</p>
-  <p><strong>Why I Want to Work in This Field:</strong> I am excited about a career in frontend development because it drives me to build and create something meaningful. I love the process of turning ideas into functional, beautiful websites and enjoy seeing the results of my work come to life.</p>
+  <p><strong>Why I Want to Work in This Field:</strong> I am excited about a career in frontend development because it allows me to blend creativity and technology. I love designing intuitive interfaces and responsive layouts that make websites accessible and enjoyable for all users.</p>
 </section>
 
 <section class="projects" id="projects">
   <h2>Projects</h2>
-  <div class="project">
+  <div class="project-card">
     <h3>TETRIS-2.0</h3>
     <p><strong>Description:</strong> A modern version of the classic Tetris game using HTML, CSS, and JavaScript.</p>
     <ul>
@@ -309,9 +418,9 @@
 
 <section class="portfolio" id="portfolio">
   <h2>Portfolio</h2>
-  <p>Here are some of the websites I've built recently.</p>
+  <p>Here are some of the websites I've built recently, showcasing responsive design and intuitive UI/UX.</p>
 
-  <div class="project">
+  <div class="project-card">
     <h3>Morning STAR Coffee Shop Website</h3>
     <p><strong>Description:</strong> A responsive site for a fictional coffee shop, showcasing modern layout and design.</p>
     <ul>
@@ -323,7 +432,7 @@
     <p><strong>Completion Date:</strong> May 2025</p>
   </div>
 
-  <div class="project">
+  <div class="project-card">
     <h3>Travel Blog Website</h3>
     <p><strong>Description:</strong> A minimal travel-themed website featuring a fullscreen background video.</p>
     <ul>
@@ -334,24 +443,58 @@
     <p><strong>Repository:</strong> <a href="https://travelblog-git-main-sabinaks-projects.vercel.app/" target="_blank">GitHub</a></p>
     <p><strong>Completion Date:</strong> May 2025</p>
   </div>
+
+  <div class="project-card">
+    <h3>BuildShop</h3>
+    <p><strong>Description:</strong> An e-commerce platform for construction materials with a highly responsive design, intuitive UI/UX, bank transfer payments, multilingual support, and notifications via Email, WhatsApp, and Telegram.</p>
+    <ul>
+      <li>Fully responsive design using Tailwind CSS, optimized for mobile, tablet, and desktop</li>
+      <li>Intuitive UI/UX with clear navigation and streamlined cart/checkout flow</li>
+      <li>Multilingual support (English/German) for accessibility</li>
+      <li>IBAN payment integration with order tracking</li>
+      <li>Email notifications via EmailJS</li>
+      <li>WhatsApp and Telegram notification placeholders</li>
+    </ul>
+    <p><strong>Live Demo:</strong> <a href="https://online-shop-woad-five.vercel.app/" target="_blank">View Site</a></p>
+    <p><strong>Repository:</strong> <a href="https://github.com/Mrskuhle/online-shop" target="_blank">GitHub</a></p>
+    <p><strong>Completion Date:</strong> July 2025</p>
+  </div>
 </section>
 
 <section class="contact" id="contact">
   <h2>Contact</h2>
-  <p><strong>Phone:</strong> +43 67761771586</p>
+  <p><strong>Phone:</strong> <a href="tel:+4367761771586">+43 67761771586</a></p>
   <p><strong>Email:</strong> <a href="mailto:skmvwk@gmail.com">skmvwk@gmail.com</a></p>
   <p><strong>Located in:</strong> Vienna, Austria</p>
 </section>
 
+<a href="#home" class="back-to-top"><i class='bx bx-up-arrow-alt'></i></a>
+
 <script>
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.navbar a');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
+  const backToTop = document.querySelector('.back-to-top');
 
+  // Toggle mobile menu
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+
+  // Close mobile menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('active');
+    });
+  });
+
+  // Highlight active section on scroll
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
+      if (window.pageYOffset >= sectionTop) {
         current = section.getAttribute('id');
       }
     });
@@ -362,9 +505,15 @@
         link.classList.add('active');
       }
     });
+
+    // Show/hide back-to-top button
+    if (window.pageYOffset > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
   });
 </script>
 
 </body>
 </html>
-
